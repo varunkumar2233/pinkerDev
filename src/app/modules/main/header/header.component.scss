@@ -95,6 +95,7 @@ i.ion-ios-arrow-down {
 
 .list {
     padding: 15px;
+    position: relative;
     
     h4 {
         font-size: 16px;
@@ -146,6 +147,14 @@ span.cross-icon {
     }
 }
 
+i.ion-ios-close {
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    top: 7px;
+    color: #ddd !important;
+}
+
 span.badge.cart-count {
     background: #fff;
     color: #333;
@@ -159,3 +168,17 @@ span.badge.cart-count {
     line-height: 20px;
     padding: 0;
 }
+
+@media screen and (max-width: 767px) {
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        max-width: 90% !important;
+        left: 5% !important;
+        min-width: 90%;
+        top: 140px !important;
+    }
+    
+    i.ion-ios-arrow-down {
+        display: none !important;
+    }
+    
+    }

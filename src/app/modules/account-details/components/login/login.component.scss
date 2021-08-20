@@ -59,5 +59,8 @@ a.sign-up-link {
 }
 
 @media screen and (max-width: 767px) {
-
+    p.not-member {
+        text-align: center;
+        margin-bottom: 30px;
+    }
 }

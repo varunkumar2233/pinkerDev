@@ -32,7 +32,33 @@ nav.navbar {
 
 .bpara{
     font-size: 22px;
+    line-height: 25px;
 }
 .button-field{
     margin-top: 25px;
 }
+
+@media (max-width: 768px) {
+    a.navbar-brand {
+        padding-left: 10px;
+    }
+    .middle-field h1 {  
+        font-size: 21px;
+        font-weight: bold;
+    }
+
+    .button-field {
+        margin-top: 40px;
+    }
+
+    button.only-text-btn {
+        color: #ADCBFA;
+        margin-top: 10px;
+    }
+
+    .bottom-field {
+        padding-top: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+ }

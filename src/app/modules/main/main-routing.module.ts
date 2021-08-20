@@ -8,6 +8,7 @@ import { ProfileAccountSettingComponent } from './profile-account-setting/profil
 import { PurchaseReportsComponent } from './purchase-reports/purchase-reports.component';
 import { PurchasedReportsComponent } from './purchased-reports/purchased-reports.component';
 import { ReachUsComponent } from './reach-us/reach-us.component';
+import { SampleReportsComponent } from './sample-reports/sample-reports.component';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
 import { WelcomePinkertonComponent } from './welcome-pinkerton/welcome-pinkerton.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
     { path: 'credits', component: CreditsComponent, },
     { path: 'profileAccountSetting', component: ProfileAccountSettingComponent },
     { path: 'welcome-pinkerton', component: WelcomePinkertonComponent },
-    { path: 'purchasedReports', component: PurchasedReportsComponent}
+    { path: 'purchasedReports', component: PurchasedReportsComponent},
+    { path: 'sampleReports', component: SampleReportsComponent}
     
 
   ]
