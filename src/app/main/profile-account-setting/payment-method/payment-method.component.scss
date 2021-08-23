@@ -1,0 +1,81 @@
+.card {
+        background: #444;
+        padding: 15px 20px 20px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 10px;
+
+    .card-body {
+        padding: 0;
+    }
+    .card-icon {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    small {
+        font-size: 12px;
+        color: #AAAAAA;
+    }
+
+    .card-title label.form-check-label {
+        color: #ddd;
+        font-size: 18px;
+        line-height: 24px;
+        padding-left: 35px;
+    }
+
+    h5 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 20px 0 15px;
+        color: #DDDDDD;
+    }
+
+    a.card-link {
+        color: #EEEEEE;
+        text-decoration: underline;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .box {
+        background: #E8F0FD;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+      
+        P{
+            color: #000000 !important;
+            margin: 0;
+        }
+    }
+}
+
+.form-label {
+    color: #DDDDDD;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button.default-btn.btn {
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    .card .card-title label.form-check-label {
+        font-size: 16px;
+    }
+    .card-icon {
+        display: none;
+    }
+
+    .card-link+.card-link {
+        float: right;
+    }
+}

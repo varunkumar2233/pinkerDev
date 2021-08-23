@@ -1,0 +1,256 @@
+<div class="container">
+    <div class="cart-panel">
+        <div class="row">
+            <div class="col-md-12 m-0 p-0">
+                <h3>Crime Index Reports</h3>
+
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mainClassto m-0 p-0">
+                <div class="inner-box">
+                  <div class="map-form-field col-md-8">
+                    <div class="row top-field">
+                    
+                      <div class="col-md-3 col-6">
+                        <div class="btn-group custom-select-dropdown" dropdown>
+                          <button id="customDropdown" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                                  aria-controls="dropdown-basic">
+                            {{selectdrop}} <span class="caret"></span>
+                          </button>
+                          <ul *dropdownMenu class="dropdown-menu"
+                              role="menu" aria-labelledby="button-basic">
+                            <ng-container *ngFor="let contVal of countries">
+                            <li (click)="getValue(contVal.countryName)" role="menuitem"><a class="dropdown-item">{{contVal.countryName}}</a></li>
+                          </ng-container>
+                          </ul>
+
+
+                          
+                        </div>
+                      </div>
+                      <div class="col-md-9 col-6">
+                          <div class="search-field">
+                            <div class="input-group has-validation">
+                              <input class="form-control" placeholder="search"  [(ngModel)]="addressselected"
+                               [typeahead]="address"
+                               class="form-control">
+                                  <div class="input-group-postpend search-icon">
+                                    <span><i class="ion-ios-search"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                     
+                  </div>
+
+                  <div class="index-report-available-box">
+                    <div class="card">
+                      <div class="card-header">
+                        Crime Index Reports Available
+                        <span class="cross">X</span>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="image">
+                              <img src="assets/images/aerial_city_nighttime.png" />
+                            </div>
+                          </div>
+
+                          <div class="col-md-8">
+                            <p>Two different options</p>
+                            <p class="notification-text"><small>* This is a free sample report</small></p>
+                            <button routerLink="purchaseReports"  class="btn default-btn">Explore</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+                    <div id="map" class="map-container"> </div>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="report-panel">
+      <div class="report-details">
+          <div class="row">
+            <div class="col-md-12">
+                <h4>My Reports</h4>
+            </div>
+          </div>
+          <div class="report-inner-box">
+           <div class="row top-field">
+              <div class="col-md-2">
+                  <div class="filter">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                          Filter
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item">Action</a>
+                          <a class="dropdown-item">Another action</a>
+                          <a class="dropdown-item">Something else here</a>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="search-field">
+                    <div class="input-group has-validation">
+                       
+                        <input type="text" class="form-control" placeholder="search">
+                        <div class="input-group-postpend">
+                            <span class="input-group-text"><i class="ion-ios-search"></i></span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <div class="view-report">
+                      <button class="btn"><img src="assets/images/excel-icon.svg"></button>
+                  </div>
+              </div>
+           </div>
+        <div class="reports-grid-view">
+          <table class="table reports-table">
+            <thead>
+              <tr>
+                <th scope="col">Location/Name</th>
+                <th scope="col">Crime Score</th>
+                <th scope="col">Type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Download/Preview</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+
+              <tr>
+                <td>100 Miami St, Miami, …</td>
+                <td>1.1x</td>
+                <td>Platinum</td>
+                <td>01/01/21</td>
+
+                <td class="action-icon">
+                    <img class="download-icon" src="assets/images/icon-download.svg" />
+                    <img class="view-icon" src="assets/images/icon-view.svg" />
+                    <img class="delete-icon" src="assets/images/icon-delet.svg" />
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+
+</div>

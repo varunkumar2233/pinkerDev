@@ -1,0 +1,26 @@
+.inner-content {
+    padding: 25px 100px 40px;
+
+    h5 {
+        font-size: 21px;
+        font-weight: bold;
+        color: #BBBBBB;
+    }
+}
+
+.form-label {
+    font-weight: bold;
+    color: #DDDDDD;
+    font-size: 16px;
+}
+
+input.form-control:active,
+.form-control:focus {
+    background-color: #E8F0FD;
+}
+
+.messages-field textarea.form-control {
+    background: #444;
+    border: 3px solid transparent;
+    min-height: 200px;
+}
