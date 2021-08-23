@@ -62,7 +62,7 @@ color: #fff !important;
   position: absolute;
   right: 8px;
   top: 7px;
-  display: none;
+  display: none !important;
 }
 
 .mapboxgl-ctrl-geocoder,

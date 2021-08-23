@@ -32,6 +32,7 @@ import { InformationOverviewComponent } from './profile-account-setting/informat
 import { PaymentMethodComponent } from './profile-account-setting/payment-method/payment-method.component';
 import { CartComponent } from './cart/cart.component';
 import { PurchasedReportsComponent } from './purchased-reports/purchased-reports.component';
+import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { PurchasedReportsComponent } from './purchased-reports/purchased-reports
     ProfileAccountSettingComponent,
     ChangePasswordComponent,
     InformationOverviewComponent,
-    PaymentMethodComponent,CartComponent, PurchasedReportsComponent
+    PaymentMethodComponent,CartComponent, PurchasedReportsComponent, OrderConfirmationComponent
   ],
   imports: [
     CommonModule,

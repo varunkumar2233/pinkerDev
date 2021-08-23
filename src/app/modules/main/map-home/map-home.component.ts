@@ -96,11 +96,14 @@ export class MapHomeComponent implements OnInit {
           "address": value.address,
           "country": value.country,
           "timestamp": value.timestamp,
+          // TODO: download_url can be null if the report failed to generate
           "download_url": value.download_url,
           "report_type": value.report_type,
           "is_archived": value.is_archived,
           "lon": value.lon,
-          "lat": value.lat
+          "lat": value.lat,
+          "is_failed": value.is_failed,
+          "failure_count": value.failure_count
 
           //"crimescore_set" :
         }
@@ -178,8 +181,9 @@ console.log(err);
       const iso3 = this.countries.find(e => e.iso2 === iso2).iso3
       //this.selectedAddress = res.result.
       this.selectedAddress = res.result.place_name;
-      this.selectedCountryCode= iso2;
-      
+      this.selectedCountryCode= iso3;
+      // console.log("iso3") 
+      // console.log(iso3)
       // get image-start
       this.selectedPlaceImageURL = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/["+res.result.bbox+"]/100x100?padding=5,1,20&access_token="+environment.mapbox.accessToken+""
       console.log(this.selectedPlaceImageURL)

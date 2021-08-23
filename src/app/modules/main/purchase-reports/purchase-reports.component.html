@@ -88,7 +88,9 @@
                                 </div>
                         <div class="btn-get-sample">
                             
-                   <button (click)="addToCartStandard()" class="btn default-btn gs-btn">ADD TO CART</button>
+                   <button (click)="addToCartStandard()" class="btn default-btn gs-btn"  [disabled]=isSignUpClicked>
+                       <span *ngIf="isSignUpClicked" class="spinner-border spinner-border-sm"></span> 
+                    ADD TO CART</button>
                             </div></div>
                         </div>
                     </div>
@@ -165,7 +167,9 @@
                                 </div>
 
                                 <div class="btn-get-sample">
-                                    <button (click)="addToCartPremium()" class="btn default-btn gs-btn">ADD TO CART</button>
+                                    <button (click)="addToCartPremium()" class="btn default-btn gs-btn"  [disabled]=isSignUpClicked>
+                                        <span *ngIf="isSignUpClicked" class="spinner-border spinner-border-sm"></span>
+                                        ADD TO CART</button>
                                 </div>
                             </div>
                         </div>

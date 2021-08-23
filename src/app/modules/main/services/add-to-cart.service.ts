@@ -25,5 +25,13 @@ export class addToCartServie {
     {
         return this.http.patch(`${environment.updateCredits}`,request);
     }
-    
+    getOrderSummary(order_id)
+    {
+        return this.http.get(`${environment.getOrderSummary}` + order_id + '/' + `${environment.securekey}`);
+    }
+  //  https://func-riskportalapi-dev-01.azurewebsites.net/report/generate/461/?code=$ecureKeyDevPinkerton1
+    genrateReport(id)
+    {
+        return this.http.post(`${environment.getrateReport}` + id + '/' + `${environment.securekey}`,'');
+    }
 }

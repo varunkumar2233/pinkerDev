@@ -20,7 +20,7 @@ export class MapboxServService {
   geocoder:any;
 
   map?: mapboxgl.Map;
-  style = 'mapbox://styles/pinkertonadmin/ckrc02ik311x717n0b73qlvej/';
+  style = 'mapbox://styles/pinkertonadmin/ckrdl5ku616tq17mtdhgdqjff/';
 
   zoom = 12;
   apiUrl: any;

@@ -6,8 +6,8 @@ loaderUri: '../../../../../login/assets/images/pageloader-white.gif';
 
 logoUri: './assets/images/';
 const apiUrl = 'https://func-riskportalapi-lab-01.azurewebsites.net/'
-const webUrl = 'https://wa-riskportal-lab-01.azurewebsites.net'
-const securekey = '?code=$ecureKeyDevPinkerton1'
+const webUrl = 'https://portal-pp.pinkerton.com'
+const securekey = '?code=$ecureKeyLabPinkerton001'
 export const environment = {
 	production: true,
 	mapbox: {
@@ -29,6 +29,8 @@ export const environment = {
 	getCountryList:`${apiUrl}report/country/${securekey}`,
 	getMyReports:`${apiUrl}report/list/${securekey}`,
 	genrateMultipassUrl:`${apiUrl}user/multipass-url/${securekey}`,
+	getOrderSummary : `${apiUrl}report/order-summary/`,
+	getrateReport : `${apiUrl}report/generate/`,
 	logoutUrl: `${webUrl}/auth/logout`, // web endpoint logout redirection.
 	postLoginRedirectUri: {
 		landingMain: `${webUrl}/main`,

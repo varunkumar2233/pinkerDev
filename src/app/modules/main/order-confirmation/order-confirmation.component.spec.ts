@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapOnHomeComponent } from './map-on-home.component';
+import { OrderConfirmationComponent } from './order-confirmation.component';
 
-describe('MapOnHomeComponent', () => {
-  let component: MapOnHomeComponent;
-  let fixture: ComponentFixture<MapOnHomeComponent>;
+describe('OrderConfirmationComponent', () => {
+  let component: OrderConfirmationComponent;
+  let fixture: ComponentFixture<OrderConfirmationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapOnHomeComponent ]
+      declarations: [ OrderConfirmationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapOnHomeComponent);
+    fixture = TestBed.createComponent(OrderConfirmationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -29,14 +29,29 @@
               </div>
               <div class="form-row">
                 <div class="mb-3 col">
-                  <label class="form-label">Phone Number</label>
-                  <input formControlName="phone" type="text" placeholder="phone number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                  <label class="form-label">Phone Number</label><br>
+                  <ngx-intl-tel-input #inputvalphone
+                      [preferredCountries]="preferredCountries"
+                      [enableAutoCountrySelect]="false" 
+                      [enablePlaceholder]="false" 
+                      [searchCountryFlag]="true"
+                      [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" 
+                      [selectFirstCountry]="true"
+                      [selectedCountryISO]="CountryISO.India" 
+                      [maxLength]="15"
+                      [phoneValidation]="true" 
+                      [separateDialCode]="separateDialCode"
+                      [numberFormat]="PhoneNumberFormat.National" 
+                      name="phone" 
+                      formControlName="phone">
+			            </ngx-intl-tel-input>
+                 
+                  <input formControlName="phone" type="text" value="{{registerForm.value.phone.e164Number}}" placeholder="phone number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
                   <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                     <div *ngIf="f.phone.errors.required">Phone no is required</div>
                     <div *ngIf="f.phone.errors.pattern">Please enter valid phone number</div>
                 </div>
                 </div>
-                
               </div>
               <div class="mb-3 form-group">
                 <label class="form-label">Email</label>
@@ -75,7 +90,11 @@
                 </div>
               </div> -->
               <div class="mb-3">  
-                <button class="btn default-btn outline-btn">Sign Up</button>
+                <button class="btn default-btn outline-btn" [disabled]=isSignUpClicked>
+                  <span *ngIf="isSignUpClicked" class="spinner-border spinner-border-sm"></span>
+                  Sign Up
+                 
+                </button>
               </div>
               <div class="mb-3 or-field">
                 <span>Or</span>

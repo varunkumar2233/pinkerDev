@@ -6,7 +6,7 @@ loaderUri: '../../../../../login/assets/images/pageloader-white.gif';
 
 logoUri: './assets/images/';
 const apiUrl = 'https://func-riskportalapi-test-01.azurewebsites.net/'
-const webUrl = 'https://wa-riskportal-test-01.azurewebsites.net'
+const webUrl = 'https://portal-qa.pinkerton.com'
 const securekey = '?code=$ecureKeyTestPinkerton1'
 export const environment = {
 	production: true,
@@ -24,12 +24,14 @@ export const environment = {
 	getinContact: `${apiUrl}mail/get-in-contact/${securekey}`,
 	addReportToCart: `${apiUrl}user/cart/add-report/${securekey}`,
 	getCartData: `${apiUrl}user/cart/get-or-create/${securekey}`,
+	getOrderSummary : `${apiUrl}report/order-summary/`,
 	deleteReportsfromCart: `${apiUrl}user/cart/delete-reports/${securekey}`,
 	updateCredits:`${apiUrl}user/cart/update-credits/${securekey}`,
 	getCountryList:`${apiUrl}report/country/${securekey}`,
 	getMyReports:`${apiUrl}report/list/${securekey}`,
 	genrateMultipassUrl:`${apiUrl}user/multipass-url/${securekey}`,
 	logoutUrl: `${webUrl}/auth/logout`, // web endpoint logout redirection.
+	getrateReport : `${apiUrl}report/generate/`,
 	postLoginRedirectUri: {
 		landingMain: `${webUrl}/main`,
 		landingHome: `${webUrl}`,

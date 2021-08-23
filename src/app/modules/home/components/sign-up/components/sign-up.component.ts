@@ -7,6 +7,7 @@ import { HomeService } from '../../../services/home.service';
 import { environment } from '../../../../../../environments/environment';
 import { AlertServiceService } from '../../../../shared/services/alert-service.service';
 import { SharedService } from '../../../../shared/services/shared-service.service';
+import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -20,6 +21,14 @@ export class SignUpComponent implements OnInit {
   private userType: string;
   private isActive = new Subject();
   private accessToken : string;
+  isSignUpClicked: boolean = false;
+
+  separateDialCode = true;
+	SearchCountryField = SearchCountryField;
+	CountryISO = CountryISO;
+  PhoneNumberFormat = PhoneNumberFormat;
+	preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
+
 
   constructor(
       private formBuilder: FormBuilder,
@@ -69,7 +78,9 @@ export class SignUpComponent implements OnInit {
   }
   onSubmit() {
       this.submitted = true;
+      this.isSignUpClicked = true;
       if (this.registerForm.invalid) {
+        this.isSignUpClicked = false;
           return;
       }
 
@@ -80,13 +91,16 @@ export class SignUpComponent implements OnInit {
               next: (data) => {
                   //console.log(data.toString())
                   localStorage.clear();
+                  this.isSignUpClicked = false;
                   this.alertService.success('Registration successful. Click sign in to login. ', { keepAfterRouteChange: true });
                   this.router.navigate(['../'], { relativeTo: this.route });
                   this.sharedService.stopLoading();
               },
               error: error => {
                 //error.error["email"]
-                  this.alertService.error(error.error["email"], { keepAfterRouteChange: true });
+                this.isSignUpClicked = false;
+                this.alertService.error(error.error["email"], { keepAfterRouteChange: true });
+                this.alertService.error(error.error["phone"], { keepAfterRouteChange: true });
                  // JSON.stringify(error)
                   console.log(error);
                   this.sharedService.stopLoading();

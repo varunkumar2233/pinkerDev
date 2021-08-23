@@ -87,7 +87,15 @@ export class HomeComponent implements OnInit {
         }
 			}
 		  }, (err) => {
-        this.alert_service.error('error');
+//        this.alert_service.error('error');
+
+
+localStorage.clear();  // temprary remove check.
+this.userType = 'client'; // for B2C
+localStorage.removeItem('AuthType');
+localStorage.setItem('AuthType', this.userType);
+
+
         this.sharedService.stopLoading();
 		  });
 	}

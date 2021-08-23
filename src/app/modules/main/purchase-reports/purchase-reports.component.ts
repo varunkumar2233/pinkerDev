@@ -27,6 +27,7 @@ export class PurchaseReportsComponent implements OnInit {
   geo:any;
   countryCode : any;
   PurchaceReport: FormGroup;
+  isSignUpClicked: boolean = false;
   
   isActive: Subject<boolean> = new Subject();   // Subject used to take until the component is alive.
   constructor(private cart_service : addToCartServie,
@@ -86,12 +87,15 @@ initializeFieldsData()
     this.cartData=data;
     this.standardbuttondisabled = false; 
     this.shared_service.stopLoading();
+    this.isSignUpClicked = false;
     },
     error => {
       this.shared_service.stopLoading();
       this.alert_service.error('error while get cart data');
       this.standardbuttondisabled = false; 
+      this.isSignUpClicked = false;
     });
+    //this.isSignUpClicked = false;
   }
 
   ngAfterViewInit(): void {
@@ -103,13 +107,15 @@ initializeFieldsData()
   }
   addToCartStandard() //Add to cart buttin click
   {
-    this.shared_service.startLoading();
+    this.isSignUpClicked = true;
+    //this.shared_service.startLoading();
    // this.standardbuttondisabled = true;
     //setTimeout(function(){ this.standardbuttondisabled = false; }, 1000);
    // this.shared_service.startLoading();
     if(this.address == null || undefined) // condition if address not selected from map.
     {
-      this.alert_service.error('please select address for purchase.');
+      this.alert_service.error("Please select address for purchase.<a href='./main'> Select Addres</a>");
+      this.isSignUpClicked = false;
       this.shared_service.stopLoading();
      // this.standardbuttondisabled = false;
       return false;
@@ -119,7 +125,7 @@ initializeFieldsData()
           var obj = {  // need to handle condition first.
                   "address": this.address, // this will change...
                   "report_type": 'standard',
-                  "country": "usa",//this.countryCode,
+                  "country": this.countryCode,//this.countryCode,
                   "lon": this.lon,
                   "lat": this.lat,
                   "geo_id": this.geo,
@@ -145,21 +151,25 @@ initializeFieldsData()
 
 this.addReporttoCartDB(obj,this.standartReportAmount); // transactionDB Add and display in cart UI.
 this.loadCartData();
+//this.isSignUpClicked = false;
 //this.shared_service.stopLoading();
 }
 
   addToCartPremium() //Add to cart buttin click
   {
-    this.shared_service.startLoading();
+    this.isSignUpClicked = true;
+    //this.shared_service.startLoading();
     if(this.address == null || undefined) // condition if address not selected from map.
     {
-      this.alert_service.error('please select address for purchase.');
+      this.alert_service.error("Please select address for purchase.<a href='./main'> Select Addres</a>");
+
+      this.isSignUpClicked = false;
       return false;
     }
   var obj = {  // need to handle condition first.
   "address": this.address, // this will change...
   "report_type": 'platinum',
-  "country": "usa",//this.countryCode,
+  "country": this.countryCode,
   "lon": this.lon,
   "lat": this.lat,
   "geo_id": this.geo,
@@ -181,6 +191,7 @@ this.loadCartData();
   // }
   this.addReporttoCartDB(obj,this.platiumReportAmount);
   this.loadCartData();
+  
   }
   
   // async getReportPricesfromShopify()

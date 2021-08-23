@@ -8,19 +8,21 @@ import { HomeService } from './services/home.service';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignUpComponent } from './components/sign-up/components/sign-up.component';
 import { LeftWrapperComponent } from './components/sign-up/components/left-wrapper/left-wrapper.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 //import { RequestIntercepterService } from '../../services/request-intercepter.service';
 @NgModule({
-	declarations: [HomeComponent,MapOnHomeComponent,SignUpComponent,LeftWrapperComponent],
+	declarations: [HomeComponent, MapOnHomeComponent, SignUpComponent, LeftWrapperComponent],
 	//exports: [HomeComponent],
 	imports: [
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule,
-		HomeRoutingModule
-	  ],
-	  providers: [
-		
+		HomeRoutingModule,
+		NgxIntlTelInputModule
+	],
+	providers: [
+
 		HomeService],
 })
 export class HomeModule {

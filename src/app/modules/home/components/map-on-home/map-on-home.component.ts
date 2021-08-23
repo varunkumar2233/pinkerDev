@@ -10,9 +10,9 @@ import { environment } from 'src/environments/environment';
 export class MapOnHomeComponent implements OnInit {
 
   map?: mapboxgl.Map;
-  style = 'mapbox://styles/pinkertonadmin/ckrc02ik311x717n0b73qlvej/';
-  lat = 42.281697;
-  lng = -83.748939;
+  style = 'mapbox://styles/pinkertonadmin/ckrdl5ku616tq17mtdhgdqjff/';
+  lat = 42.281712;
+  lng = -83.748909;
   zoom = 1
   constructor() {
     (mapboxgl as any).accessToken = environment.mapbox.accessToken;
