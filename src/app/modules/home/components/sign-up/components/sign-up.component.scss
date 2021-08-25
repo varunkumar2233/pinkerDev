@@ -8,10 +8,11 @@
         background: #444;
         color: #fff;
         padding: 50px 80px;
+   
     }
     
     .form-field {
-        padding: 80px;
+        padding: 30px 80px;
     }
     
     p.not-member {
@@ -79,6 +80,28 @@ input[type=password]:focus, input[type=email]:focus{
     top: 32px;
 }
 
+.bottom-link {
+    padding: 50px 40px;
+}
+
+a.link {
+    padding: 0 20px 0 10px;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.right-footer {
+    background: #444;
+}
+
+.copyright {
+    padding: 50px 145px;
+    font-size: 14px;
+    color: #888;
+    font-weight: bold;
+}
 
 /*****************************************************
 	Custom styling example bellow.
@@ -169,4 +192,26 @@ ngx-intl-tel-input input::placeholder {
 
 ngx-intl-tel-input input[disabled] {
 	background-color: #e5eaf1;
+}
+
+
+@media (max-width: 767px) {
+    .container-fluid .row + .row {
+        background: #444;
+    }
+.bottom-link {
+    padding: 25px 0 !important;
+    text-align: center;
+}
+
+.bottom-link a.link {
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+footer .copyright {
+    padding: 10px;
+    font-size: 9px;
+    text-align: center;
+}
 }

@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { SignUpComponent } from './components/sign-up/components/sign-up.component';
 import { LeftWrapperComponent } from './components/sign-up/components/left-wrapper/left-wrapper.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+
 //import { RequestIntercepterService } from '../../services/request-intercepter.service';
 @NgModule({
 	declarations: [HomeComponent, MapOnHomeComponent, SignUpComponent, LeftWrapperComponent],

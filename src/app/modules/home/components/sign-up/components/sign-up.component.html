@@ -46,7 +46,7 @@
                       formControlName="phone">
 			            </ngx-intl-tel-input>
                  
-                  <input formControlName="phone" type="text" value="{{registerForm.value.phone.e164Number}}" placeholder="phone number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                  <input *ngIf="registerForm.value.phone" formControlName="phone" type="text" value="{{registerForm.value.phone.e164Number}}" placeholder="phone number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
                   <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                     <div *ngIf="f.phone.errors.required">Phone no is required</div>
                     <div *ngIf="f.phone.errors.pattern">Please enter valid phone number</div>
@@ -109,8 +109,24 @@
         </div>
 
 
-        <!-- <footer></footer> -->
+        
       </div>
     </div>
+    <div class="row">
+			<div class="col-md-4">
+			<div class="bottom-link">
+						<a class="link">Terms</a>
+						<a class="link">Privacy</a>
+						<a class="link">Learn More</a>
+					</div>
+			</div>
+			<div class="col-md-8 right-footer">
+			 <footer>
+                        <div class="copyright">
+                            &copy;2021 Pinkerton Consulting & Investigations, Inc. ALL RIGHTS RESERVED
+                        </div>
+                    </footer>  
+			</div>
+			</div>
   </div>
 </div>
